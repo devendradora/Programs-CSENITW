@@ -203,6 +203,6 @@ mpz_inits(xa,ya,yb,k,NULL);
         
         mpz_powm(k,yb,xa,p);
         
-        gmp_printf("key is %Zd\n",k);
+        gmp_printf("\n\n\nkey is %Zd\n",k);
 
 }

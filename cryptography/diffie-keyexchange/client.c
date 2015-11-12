@@ -85,5 +85,5 @@ int main(int argc,char *argv[ ])
         
         mpz_powm(k,ya,xb,p);
         
-        gmp_printf("key is %Zd\n",k);
+        gmp_printf("\n\n\n\nkey is %Zd\n",k);
 }
