@@ -1,0 +1,52 @@
+/**************** Not complited and not correct for extended gcd algo********************/
+
+#include <stdio.h>
+#include <gmp.h>
+
+void find_gcd(mpz_t gcd, mpz_t a,mpz_t b){
+	while(mpz_cmp(a,b)!=0){
+		if(mpz_cmp(a,b)>0)
+		{
+			mpz_sub(a,a,b);
+		}
+		else
+			mpz_sub(b,b,a);
+	}
+	mpz_set(gcd,a);
+}
+
+int main(){
+	mpz_t r,r0,r1,r2,a,b,c,d,e,f,g,h,a1,b1,gcd,q1;
+	mpz_inits(a,d,1);
+	mpz_inits(b,c,0);
+	mpz_inits(gcd,a1,b1,q1,r2,e,f,g,h,NULL);
+	printf("enter first number: \n");
+	mpz_inp_str(a1,stdin,10);
+	printf("enter second number: \n");
+	mpz_inp_str(b1,stdin,10);
+	mpz_set(r0,a1);
+	mpz_set(r1,b1);
+mpz_out_str(stdout,10,r0);printf("\n");
+	mpz_out_str(stdout,10,r1);printf("\n");
+	mpz_mod(r,r0,r1);
+	while(r!=0){
+
+		mpz_tdiv(q1,r0,r1);
+		mpz_mod(r2,r0,r1);
+		mpz_mul(g,q1,c);
+		mpz_mul(h,q1,d);
+		mpz_sub(e,a,g);
+		mpz_sub(f,b,h);
+		mpz_set(a,c);
+		mpz_set(c,e);
+		mpz_set(b,d);
+		mpz_set(d,f);
+		mpz_set(r0,r1);
+		mpz_set(r1,r2);
+		mpz_mod(r,r0,r1);
+	}
+	find_gcd(gcd,r0,r1);
+	mpz_out_str(stdout,10,gcd);
+	printf("\n");
+	return 0;
+}

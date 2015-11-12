@@ -51,10 +51,10 @@ int main(){
 	gmp_printf("phi_N : %Zd \n",phi_N );
 
 
-	mpz_urandomm(e,state,phi_N);
-	mpz_nextprime(e,e);
+	// mpz_urandomm(e,state,phi_N);
+	// mpz_nextprime(e,e);
 	
-	/*
+	
 	mpz_set_ui(e,2);
      mpz_gcd(res,e,phi_N);
 	 while( mpz_cmp_ui(res,1) != 0 ){
@@ -62,7 +62,7 @@ int main(){
 	 	  mpz_gcd(res,e,phi_N);
                    
 	 }
-*/
+
 
 	gmp_printf("e : %Zd \n",e);
 

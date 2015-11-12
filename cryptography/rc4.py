@@ -11,6 +11,8 @@ def KSA(key):
         S[i], S[j] = S[j], S[i]  
 
     return S
+def encr():
+    print plaintext
 
 def PRGA(S):
     i = 0
@@ -37,19 +39,34 @@ def convertKey(s):
         i+=1
     return s
 
+def cyp(): 
+     for c in plaintext: 
+      print sys.stdout.write("%c" % (ord(c) ^ keystream.next()))
+
+     for c in plaintext: 
+      print keystream.next()
+     encr()
+   
+
+
+
 
 if __name__ == '__main__':
-    key = 'dev'
-    plaintext = 'helloworld'
+    key = 'bbbb'
+    plaintext = 'abcd'
+
+    print "key : ",key
+    print "plaintext :", plaintext
 
     key = convertKey(key)
-    #print "key",key
+   
     keystream = RC4(key)
-    #print "key stream",keystream
-
+    #print "key stream",keystream 
     
-    for c in plaintext:
-        sys.stdout.write("%02X" % (ord(c) ^ keystream.next()))
-    print
+    cyp()
+
+
+  
+
 
 
